@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "New Order";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+<link href="~/Styles/Orders.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <h3>General Data</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="Customer">Customer</label>
+                    <input type="text" class="form-control" id="Customer" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="RFC">RFC</label>
+                    <input type="text" class="form-control" id="RFC" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryDate">Delivery Date</label>
+                    <input type="text" class="form-control" id="DeliveryDate" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="Comments">Comments</label>
+                    <textarea class="form-control" id="Comments" rows="3"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Products</h3>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="searchProduct" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="SearchProduct()">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="Clave">Clave</label>
+                    <input type="text" class="form-control" id="Clave" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Description">Description</label>
+                    <input type="text" class="form-control" id="Description" readonly>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="Quantity">Quantity</label>
+                    <input type="number" class="form-control" id="Quantity">
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="Quantity"></label>
+                    <button type="button" class="btn btn-success" onclick="addProduct()" style="margin-top: 30px;">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="tablePoducts">
+        <div class="row tableProducts">
+            <div class="col-md-2">ID</div>
+            <div class="col-md-3">Name</div>
+            <div class="col-md-5">Description</div>
+            <div class="col-md-2">Quantity</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" onclick="SaveOrder()">Save</button>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/NewOrder.js"></script>
+
